@@ -28,6 +28,10 @@ ThoughtProbes=['I was absorbed in the contents of my thoughts:',
 'My thoughts involved myself:',
 'My thoughts contained information I already knew (e.g., knowledge or memories):']
 
+# Scale anchors (1 / 10) from the mDES item table; every probe except
+# emotion runs from "Not at all" to "Completely".
+Anchors={'The emotion of my thoughts was:': ('Negative', 'Positive')}
+
 n_grad=5
 
 
@@ -48,7 +52,9 @@ answers=[]
 col1, col2 = st.columns(2)
 for i, probe in enumerate(ThoughtProbes):
     with (col1 if i < 8 else col2):
-        answers.append(st.slider(probe, 1, 10, 5, key=f"Q{i+1}"))
+        low, high = Anchors.get(probe, ('Not at all', 'Completely'))
+        label=f"{probe}  \n:gray[1 = {low} · 10 = {high}]"
+        answers.append(st.slider(label, 1, 10, 5, key=f"Q{i+1}"))
 
 brain = st.toggle("See estimated brain", value=False)
 
