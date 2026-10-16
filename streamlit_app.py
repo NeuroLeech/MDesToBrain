@@ -21,16 +21,17 @@ ThoughtProbes=['I was absorbed in the contents of my thoughts:',
 'My thoughts were distracting me from what I was doing:',
 'My thoughts were focused on an external task or activity:',
 'My thoughts were intrusive:',
-'My thoughts were deliberate:',
+'My thoughts were:',
 'My thoughts were detailed and specific:',
 'My thoughts involved future events:',
 'The emotion of my thoughts was:',
 'My thoughts involved myself:',
 'My thoughts contained information I already knew (e.g., knowledge or memories):']
 
-# Scale anchors (1 / 10) from the mDES item table; every probe except
-# emotion runs from "Not at all" to "Completely".
-Anchors={'The emotion of my thoughts was:': ('Negative', 'Positive')}
+# Scale anchors (1 / 10) from the 16-item mDES table; every other probe
+# runs from "Not at all" to "Completely".
+Anchors={'My thoughts were:': ('Spontaneous', 'Deliberate'),
+'The emotion of my thoughts was:': ('Negative', 'Positive')}
 
 n_grad=5
 
