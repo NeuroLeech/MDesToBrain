@@ -1,0 +1,15 @@
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+
+# Old model (>100 MB, over GitHub's file limit; not used by the app)
+fitted_modelsOld.pkl
+
+# Duplicates of the root data files / unused scratch work
+Rep/*
+!Rep/fitted_models.pkl
+results/
+Mdes2Brain_v3_multipageDoesntWork.py
+slider.py
+answers.json
+render.yaml
